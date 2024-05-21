@@ -1,8 +1,11 @@
+body{
+    background: #283747;
+}
 .cell{
     width: 75px;
     height: 75px;
-    border: 2px solid;
-    box-shadow: 0 0 0 2px;
+    border: 2px solid #979A9A;
+    box-shadow: 0 0 0 2px #979A9A;
     line-height: 75px;
     font-size: 50px;
     cursor: pointer;
@@ -14,6 +17,23 @@
     margin: auto;
 }
 #gameContainer{
+    margin-top: 250px;
     font-family: "Permanent Marker", cursive;
     text-align: center;
+}
+h1{
+    color: #979A9A;
+}
+button{
+    margin-left: 15px;
+    border-radius: 5px;
+    padding: 5px;
+    background: #26566d;
+    transition: .5s;
+    border: none;
+    box-shadow: 0 0 10px rgb(3, 3, 3);
+}
+button:hover{
+    font-size: 18px;
+    cursor: pointer;
 }
