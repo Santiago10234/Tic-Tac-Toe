@@ -79,3 +79,19 @@ restartBtn.addEventListener("click", function () {
     document.querySelector("#statusText").innerHTML = "";
     isPlayerOne = true;
 });
+
+
+
+let openModal = document.querySelector(".link")
+let modal = document.querySelector(".modal")
+let modal_close = document.querySelector(".modal_close")
+
+openModal.addEventListener("click", function (e) {
+    e.preventDefault()
+    modal.classList.add("modal--show")
+})
+
+modal_close.addEventListener("click", function (e) {
+    e.preventDefault();
+    modal.classList.remove("modal--show")
+})

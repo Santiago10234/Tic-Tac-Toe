@@ -8,7 +8,11 @@
 </head>
 <body>
     <div id="gameContainer">
-        <a href="index.html">Juega contra la maquina</a>
+        <nav>
+            <button class="link">Instrucciones</button>
+            <a class="link" href="index.html">Juega contra la maquina</a>
+        </nav>
+       
         <h1>Tic Tac Toe</h1>
         <div id="cellContainer">
             <div cellIndex= "0" class="cell"></div>
@@ -22,8 +26,16 @@
             <div cellIndex= "8" class="cell"></div>
         </div>
         <h2 id="statusText"></h2>
-        <button id="restartBtn">Restart</button>
+        <button class="link" id="restartBtn">Restart</button>
     </div>
+
+    <section class="modal">
+        <div class="modal_container">
+            <h1 class="modal_title">Instrucciones del juego</h1>
+            <p class="modal_parrafo">El objetivo de Tic Tac Toe es conseguir tres en una fila. Juegas en un tablero de tres por tres. El primer jugador se conoce como X y el segundo es O. Los jugadores alternan colocando X y Os en el tablero de juego hasta que el oponente tenga tres en una fila o se llenen los nueve cuadrados.</p>
+            <a href="" class="modal_close">cerrar</a>
+        </div>
+    </section>
     <script src="2players.js"></script>
 </body>
 </html>
