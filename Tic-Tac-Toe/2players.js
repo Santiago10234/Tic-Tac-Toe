@@ -57,13 +57,32 @@ function checkWinner() {
             // Mostrar al ganador
             showWinner(cell1);
             return;
+        } else if (checkDraw()) {
+            showDraw();
         }
     }
+}
+
+// Función para verificar si hay un empate
+function checkDraw() {
+    for (const cell of cells) {
+        if (!cell.innerHTML) {
+            return false; // Si hay una celda vacía, el juego no está empatado
+        }
+    }
+    return true; // Si no hay celdas vacías, el juego está empatado
 }
 
 // Función para mostrar al ganador
 function showWinner(player) {
     document.querySelector("#statusText").innerHTML = player + " WIN";
+    // Deshabilitar todas las celdas para evitar más movimientos
+    disableCells();
+}
+
+// Función para mostrar un mensaje de empate
+function showDraw() {
+    document.querySelector("#statusText").innerHTML = "It's a draw!";
     // Deshabilitar todas las celdas para evitar más movimientos
     disableCells();
 }
@@ -91,17 +110,19 @@ function resetGame() {
     document.querySelector("#statusText").innerHTML = "";
 }
 
- 
-let openModal = document.querySelector(".link")
-let modal = document.querySelector(".modal")
-let modal_close = document.querySelector(".modal_close")
+// Obtener elementos
+let openModal = document.querySelector(".link");
+let modal = document.querySelector(".modal"); 
+let modal_close = document.querySelector(".modal_close");
 
-openModal.addEventListener("click", function (e) {
-    e.preventDefault()
-    modal.classList.add("modal--show")
-})
+// Evento de clic para abrir el modal
+openModal.addEventListener("click", function (e) { 
+    e.preventDefault(); 
+    modal.classList.add("modal--show"); 
+});
 
+// Evento de clic para cerrar el modal
 modal_close.addEventListener("click", function (e) {
     e.preventDefault();
-    modal.classList.remove("modal--show")
-})
+    modal.classList.remove("modal--show");
+});
